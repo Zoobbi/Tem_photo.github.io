@@ -175,6 +175,9 @@
 .fa-stack-2x {
   font-size: 2em;
 }
+.fa-arrow-up:before {
+  content: "\f062";
+}
 .fa-inverse {
   color: #ffffff;
 }

@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Фотограф Сергей Томашев</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="libs/font-awesome.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
  <div class="wrapper">
-    <header class="upper">
+    <header class="upper" id="up">
         <nav class="f18">
-          <a href="#">главная</a>
-          <a href="#">обо мне</a>
-          <a href="#">портфолио</a>
-          <a href="#">связаться</a>
+          <a href="#" class="scrollto">главная</a>
+          <a href="#about-me" class="scrollto">обо мне</a>
+          <a href="#portfolio" class="scrollto">портфолио</a>
+          <a href="#feedback-screen" class="scrollto">связаться</a>
           <a href="#">альбомы</a>
           <a href="#">онлайн-заказ</a>
         </nav>
@@ -79,17 +79,32 @@
                  <form action="" class="f16">
                      <input type="name" placeholder="Ваше имя">
                      <input type="email" placeholder="Ваша почта">
-                     <textarea name="queston" id=""  rows="10" placeholder="Введите вопрос, сообщение, пожелание"></textarea>
+                     <textarea name="queston" id=""  rows="10" placeholder="Ваш вопрос, сообщение, пожелание"></textarea>
                      <input type="submit">
                  </form>
              </div>
          </div>
          <img src="img/fb.jpg" alt="Работа фотографа Сергея Томашева">
      </div>
+     <footer>
+         <a href="#up" class="scrollto"><i class="fa fa-arrow-up f30" aria-hidden="true"></i></a>
+         <span class="f18">Наверх</span>
+         <img src="img/autor.svg" alt="">
+         <p class="f14">copyright © 2018</p>
+     </footer>
  </div>
-
  <script src="libs/jquery.js"></script>
  <script src="libs/parallax/parallax.min.js"></script>
- <!--<script src="libs/masonry/mas.js"></script>-->
+
+ <script type="text/javascript">
+jQuery(document).ready(function() {
+  jQuery("a.scrollto").click(function () {
+    elementClick = jQuery(this).attr("href")
+    destination = jQuery(elementClick).offset().top;
+    jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 1200);
+    return false;
+  });
+});
+</script>
 </body>
 </html>
